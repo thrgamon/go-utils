@@ -1,4 +1,3 @@
-// +heroku goVersion go1.18
-module github.com/thrgamon/go-ahead
+module github.com/thrgamon/go-utils
 
 go 1.18
