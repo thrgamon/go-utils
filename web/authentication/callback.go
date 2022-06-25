@@ -5,7 +5,7 @@ import (
 	"net/http"
 
 	"github.com/gorilla/sessions"
-  "github.com/thrgamon/go-utils/repo"
+  "github.com/thrgamon/go-utils/repo/user"
 )
 
 var Store *sessions.CookieStore
