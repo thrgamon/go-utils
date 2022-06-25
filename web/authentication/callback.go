@@ -5,12 +5,12 @@ import (
 	"net/http"
 
 	"github.com/gorilla/sessions"
-  "github.com/thrgamon/go-utils/repo/user"
+  userRepo "github.com/thrgamon/go-utils/repo/user"
 )
 
 var Store *sessions.CookieStore
 var Logger *log.Logger
-var UserRepo repo.UserRepo
+var UserRepo userRepo.UserRepo
 
 
 type Profile struct {
