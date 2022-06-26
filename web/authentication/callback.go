@@ -50,7 +50,7 @@ func CallbackHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	exists, err := UserRepo.Exists(r.Context(), Auth0ID(profile.Sub))
+	exists, err := UserRepo.Exists(r.Context(), userRepo.Auth0ID(profile.Sub))
 	if err != nil {
 		http.Error(w, "There was an unexpected error", http.StatusInternalServerError)
 		Logger.Println(err.Error())
@@ -58,7 +58,7 @@ func CallbackHandler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	if !exists {
-		err := UserRepo.Add(r.Context(), Username(profile.Nickname), Auth0ID(profile.Sub))
+		err := UserRepo.Add(r.Context(), userRepo.Username(profile.Nickname), userRepo.Auth0ID(profile.Sub))
 		if err != nil {
 			http.Error(w, "There was an unexpected error", http.StatusInternalServerError)
 			Logger.Println(err.Error())
