@@ -10,7 +10,7 @@ import (
 
 var Store *sessions.CookieStore
 var Logger *log.Logger
-var UserRepo userRepo.UserRepo
+var UserRepo *userRepo.UserRepo
 
 
 type Profile struct {
